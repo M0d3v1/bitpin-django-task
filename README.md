@@ -20,3 +20,18 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 
+Usage
+Once the server is running, the API will be available at http://127.0.0.1:8000/.
+
+To view the list of posts: GET /posts/
+To view the detail of a single post: GET /posts/{post_id}/
+To rate a post: POST /ratings/ with payload {"post": post_id, "score": score}
+To update a rating: PUT /ratings/{rating_id}/ with payload {"score": new_score}
+Authentication
+This API requires users to be authenticated to rate posts. Use Django's authentication system to create users and manage sessions.
+
+Testing
+Test the API using tools like Postman or curl to ensure all endpoints are functioning as expected.
+
+Deployment
+When deploying to a production environment, be sure to set DEBUG = False in your settings and configure your database and other services securely.
